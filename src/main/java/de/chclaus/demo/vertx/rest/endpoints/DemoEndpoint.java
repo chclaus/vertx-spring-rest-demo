@@ -29,7 +29,7 @@ public class DemoEndpoint {
   public Router demoRouter() {
     Router demoRouter = Router.router(vertx);
 
-    demoRouter.route().handler(this::decorate);
+    demoRouter.route().handler(this::applyHeaders);
     demoRouter.route("/foo").handler(this::foo);
 
     return demoRouter;
@@ -38,9 +38,9 @@ public class DemoEndpoint {
   /**
    * All routes shall return the content-type application/json.
    *
-   * @param routingContext
+   * @param routingContext the given routing context.
    */
-  private void decorate(RoutingContext routingContext) {
+  private void applyHeaders(RoutingContext routingContext) {
     routingContext.response().putHeader("content-type", "application/json; charset=utf-8");
     routingContext.next();
   }

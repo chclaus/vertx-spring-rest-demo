@@ -9,10 +9,10 @@ import org.springframework.context.annotation.Bean;
  * @author chclaus (ch.claus@me.com)
  */
 @SpringBootApplication
-public class DemoVertxRestApplication {
+public class DemoApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(DemoVertxRestApplication.class, args);
+    SpringApplication.run(DemoApplication.class, args);
   }
 
   @Bean
